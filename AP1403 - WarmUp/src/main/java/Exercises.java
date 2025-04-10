@@ -34,7 +34,7 @@ public class Main {
         }
         long a = 0, b = 1;
         long temp = 0;
-        for (long i = 0; a <= n; i++) {
+        for (long i = 1; a <= n; i++) {
             temp = b;
             b = a + b;
             a = temp;
@@ -63,13 +63,14 @@ public class Main {
         the output has to be a two-dimensional array of characters, so don't just print the triangle!
      */
     public char[][] generateTriangle(int n) {
-        char[][] triangle = new char[n][n];
         if (n <= 0) {
             return new char[0][0];
         }
-        for (int i = 0; i <= n; i++) {
+        char[][] triangle = new char[n][];
+        for (int i = 0; i < n; i++) {
+            triangle[i] = new char[i + 1];
             for (int j = 0; j <= i; j++) {
-                if (j == 0 || j == n - 1 || i == n - 1) {
+                if (j == 0 || j == i || i == n - 1) {
                     triangle[i][j] = '*';
                 } else {
                     triangle[i][j] = ' ';
@@ -82,11 +83,17 @@ public class Main {
 
     public static void main(String[] args) {
         Main ex = new Main();
+        /*
         System.out.println(ex.isPrime(1));
         System.out.println(ex.isPrime(41));
         System.out.println(ex.isPrime(2455));
         System.out.println(ex.isPrime(2147483647));
 
+        System.out.println(ex.fibonacciIndex(5));
+        System.out.println(ex.fibonacciIndex(15));
+        System.out.println(ex.fibonacciIndex(987));
+        System.out.println(ex.fibonacciIndex(5702887));
+        */
 
     }
 }
